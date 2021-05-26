@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./P_1.css">
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <script src="./P_1.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center">
+            <h1 class ="navbar-brand">JS Library</h1>
+        </nav>
+
+
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid justify-content-center d-flex">
+                <span class="row row-cols-lg-auto g-3 align-items-center">
+
+                    <span class = "navbar-brand">Order by:</span>
+
+                    <div class="col-12">
+                        <label class="visually-hidden" for="dateSelect">Preference</label>
+                        <select class="form-select" id="dateSelect">
+                          <option selected value = "0">Date Added</option>
+                          <option value="1">Date Published</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="visually-hidden" for="ascDesc">Preference</label>
+                        <select class="form-select" id="ascDesc">
+                          <option selected value = "0">Descending</option>
+                          <option value="1">Ascending</option>
+                        </select>
+                    </div>
+                    
+                    <br>
+                    <div class="col-12">
+                        Total Books: <count id = "totalbooks"></count>
+                    </div>
+                    <div class="col-12">
+                        Books Read: <count id = "booksread"></count>
+                    </div>
+                    <div class="col-12" >
+                        Books Not Read: <count id = "booksnotread"></count>
+                    </div>
+                </span>
+            </div>
+        </nav>
+
+
+
+        <div id = "bookform" class ="container-fluid center_div mt-5 ">
+            <div class ="form-group">
+                <label for="book_title">Book Title:</label><br>
+                    <input type="text" id ="book_title" class="inputfield form-control"><br>
+            </div>
+            <div class ="form-group">
+                <label for="book_title">Book Author:</label><br>
+                    <input type="text" id ="book_author" class="inputfield form-control"><br>
+            </div>
+            <div class ="form-group">
+                <label for="book_title">Date Published:</label><br>
+                    <input type="date" id ="pub" class="inputfield form-control"><br>
+            </div>
+            <div class ="form-group">
+                <label for="book_title">No Of Pages:</label><br>
+                    <input type="number" id ="no_pages" class="inputfield form-control"><br>
+            </div>
+            <div class ="form-group">
+                <label for="read">Read: </label>
+                    <input type="checkbox" id ="read" class="inputfield form-check-input"><br>
+            </div><br>
+            <input type ="button" class = "form-control btn btn-dark" id="submitbtn" value ="Submit">
+        </div>
+
+
+
+        <main class ="container-fluid mt-5">    
+            <div class="row gx-5 d-flex justify-content-center" id ="bookshelf" >
+                <!-- <div class="col-xl-3 col-md-4 col-xs-12 d-flex justify-content-center align-items-center p-4">
+                    <div class= "bookdiv pt-4">
+                        <h3 class ="bookdiv_title"> A Game of Thrones</h3>
+                        <h5 class = "bookdiv_author"> George R. R. Martin</h5><br>
+                        <h6 class = "bookdiv_added">Added: 123/123/123</h6>
+                        <h6 class = "bookdiv_pub">Published: 12313/123/123</h6>
+                        <h6 class = "bookdiv_no_pages">Pages:123 </h6><br>
+                        <button class ="">Mark as Read</button>
+                    </div>
+                </div> -->
+              </div>
+        </main>
+
+
+
+        <div id = "addbookbtn"><h1 class ="spin">+</h1></div>
+    </body>
+</html>
