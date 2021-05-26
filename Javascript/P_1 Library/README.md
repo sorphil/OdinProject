@@ -1,4 +1,5 @@
-# Library *(-localStorage & Firebase yet to be implemented)*
+# Library 
+*(-localStorage & Firebase yet to be implemented)*
 ## A simple book-manager that allows users to add/remove/sort books and mark them as read or not
 
 ### Built with:
