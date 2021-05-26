@@ -189,9 +189,10 @@ function deleteButton(book)
 
 
 function markRead(book)
-{
+{   
+    book.read = !book.read
     const index = myLibrary.indexOf(book=> book.title = book.title)
-    myLibrary.splice(index,1)
+    myLibrary[index]=book
     document.querySelector(`#mark_${book.book_title.replace(/ /g,'')}`).remove()
     const button = document.createElement('button')
     button.classList.add("btn", `${book.read? "btn-secondary" :"btn-primary"}`)
