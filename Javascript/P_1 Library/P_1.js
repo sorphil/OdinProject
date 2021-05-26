@@ -68,7 +68,6 @@ document.addEventListener('DOMContentLoaded',  ()=>{
         })
         addBookToLibrary(data)
         sortBooks(dateSelect.value, ascDesc.value)
-        
     })
     
 })
@@ -90,9 +89,8 @@ function sortBooks(dateflag, ascdescflag)
         else
         myLibrary.sort((a,b)=> (a.pub>b.pub)? 1: -1)
     }
-    console.log("Changed")
     document.querySelector('#bookshelf').innerHTML = ""
-    loadAllBooks(myLibrary)
+    loadAllBooks(myLibrary) 
 }
 
 
