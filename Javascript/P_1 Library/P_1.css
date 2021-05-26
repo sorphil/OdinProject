@@ -27,7 +27,6 @@ opacity: 1;
     width: 4vmax;
     height: 4vmax;
     border-radius: 50%;
-    font-size: 2vmax;
     display: inline-flex;
     justify-content: center;
     align-items: center; 
@@ -38,6 +37,9 @@ opacity: 1;
     z-index: 999;
 }
 
+#addbookbtn h1{
+    font-size: 2vmax;
+}
 #addbookbtn.on
 {
     transform-origin: center;
