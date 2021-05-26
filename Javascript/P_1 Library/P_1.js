@@ -67,6 +67,8 @@ document.addEventListener('DOMContentLoaded',  ()=>{
             data[`${input.id}`] = input.value
         })
         addBookToLibrary(data)
+        sortBooks(dateSelect.value, ascDesc.value)
+        
     })
     
 })
