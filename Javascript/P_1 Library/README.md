@@ -1,8 +1,8 @@
 # Library 
-## A simple book-manager that allows users to add/remove/sort books and mark them as read or not
+### A simple book-manager that allows users to add/remove/sort books and mark them as read or not
 
-### Built with:
+#### Built with:
 * CSS/Bootstrap
 * Pure Javascript
 * HTML
-*(-localStorage & Firebase yet to be implemented)
+* (-localStorage & Firebase yet to be implemented)
