@@ -8,6 +8,7 @@ let myLibrary = [
         read: true
     }
 ];
+
 function Book(book_title, book_author, no_pages, read, pub, date_added) {
     this.book_title = book_title
     this.book_author = book_author
@@ -28,7 +29,7 @@ document.addEventListener('DOMContentLoaded',  ()=>{
     const inputs_arr = Array.from(inputs)
 
     checkInputs(inputs_arr)
-    loadAllBooks(myLibrary)
+    loadBooks(myLibrary)
 
     dateSelect.addEventListener('change', function(e){
         sortBooks(e.currentTarget.value, ascDesc.value)
@@ -90,9 +91,8 @@ function sortBooks(dateflag, ascdescflag)
         myLibrary.sort((a,b)=> (a.pub>b.pub)? 1: -1)
     }
     document.querySelector('#bookshelf').innerHTML = ""
-    loadAllBooks(myLibrary) 
+    loadBooks(myLibrary) 
 }
-
 
 
 function addBookToLibrary(data) {
@@ -104,26 +104,23 @@ function addBookToLibrary(data) {
     if (!myLibrary.find(book=>book.book_title == data.book_title))
     {
         myLibrary.push(book)
-        loadAddedBook(book)
     }
     else
     alert('Book already exists')
-    
 }
 
 
+//to check if input fields are valid or invalid/empty
 function checkInputs(inputs_arr)
 {   
-
     if (inputs_arr.every(input=>input.value!=""))
     submitbtn.removeAttribute('disabled')
     else
     submitbtn.setAttribute('disabled', 'true')
-
 }
 
 
-function loadAllBooks()
+function loadBooks()
 {  
     for(let i = 0; i<myLibrary.length; i++)
     {
@@ -152,35 +149,13 @@ function loadAllBooks()
     updateBanner()
 }
 
-
-function loadAddedBook(book)
-{
-    const div = document.createElement('div')
-        div.classList.add("col-xl-3", "col-md-4", "col-xs-12", "d-flex", "justify-content-center", "align-items-center", "p-4")
-        div.innerHTML = `
-            <div class= "bookdiv p-4" id="bookdiv_${book.book_title.replace(/ /g,'')}">
-                <h3 class ="bookdiv_title">${book.book_title}</h3>
-                <h5 class = "bookdiv_author"> ${book.book_author}</h5><br>
-                <h6 class = "bookdiv_added">Added: ${book.date_added.slice(0,10)}</h6>
-                <h6 class = "bookdiv_pub">Published: ${book.pub}</h6>
-                <h6 class = "bookdiv_no_pages">Pages: ${book.no_pages}</h6><br>
-                <button class ="btn btn-danger" id = "delete_${book.book_title.replace(/ /g,'')}">Delete</button>
-                <button class ="btn ${book.read?"btn-secondary":"btn-primary"}" id = "mark_${book.book_title.replace(/ /g,'')}">${book.read?"Mark as Unread":"Mark as Read"}</button>
-   
-            </div>
-        `
-        document.querySelector('#bookshelf').appendChild(div)
-        markButton(book)
-        deleteButton(book)
-        updateBanner()
-}
-
-
+// to initialize the mark read buttons by adding an onclick event listener on them
 function markButton(book){
     const mark = document.querySelector(`#mark_${book.book_title.replace(/ /g,'')}`)
     mark.addEventListener('click', ()=>{markRead(book)})
 }
 
+// to initialize the delete buttons by adding an onclick event listener on them
 function deleteButton(book)
 {
     const deletebtn = document.querySelector(`#delete_${book.book_title.replace(/ /g,'')}`)
@@ -190,24 +165,31 @@ function deleteButton(book)
 
 function markRead(book)
 {   
+    //updates the read status of the book in the library
     book.read = !book.read
     const index = myLibrary.indexOf(book=> book.title = book.title)
     myLibrary[index]=book
+    
+    //removes the book
     document.querySelector(`#mark_${book.book_title.replace(/ /g,'')}`).remove()
+
+    //creates new button and event listener
     const button = document.createElement('button')
     button.classList.add("btn", `${book.read? "btn-secondary" :"btn-primary"}`)
     button.id = `mark_${book.book_title.replace(/ /g,'')}`
     button.innerHTML = `${book.read?"Mark as Unread":"Mark as Read"}`
     button.addEventListener('click', ()=>{markRead(book)})
     document.querySelector(`#bookdiv_${book.book_title.replace(/ /g,'')}`).appendChild(button)
+
     updateBanner()
 }
+
 
 function deleteBook(book){
     const index = myLibrary.indexOf(book=> book.title = book.title)
     myLibrary.splice(index,1)
     document.querySelector('#bookshelf').innerHTML = ""
-    loadAllBooks(myLibrary)
+    loadBooks(myLibrary)
     updateBanner()
 }
 
