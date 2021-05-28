@@ -1,0 +1,173 @@
+body
+{
+    padding-right:0;
+    padding-left:0;
+    margin-right:auto;
+    margin-left:auto;
+    font-family: Arial, Helvetica, sans-serif;
+    height:100vh; /* To make footer stick to the bottom, taken from https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b*/
+    margin:0;/* To make footer stick to the bottom */
+}
+footer
+{
+    min-height:50px; /* To make footer stick to the bottom */
+    background-color: whitesmoke;
+    border: 2px solid rgb(236, 235, 235);
+    text-align: center;
+}
+footer a:hover
+{
+    text-decoration: underline;
+}
+
+/* Trick */ /* To make footer stick to the bottom */
+body
+{
+    display:flex;
+    flex-direction:column;
+  }
+
+footer
+{
+    margin-top:auto;
+  }
+
+
+.container-fluid {
+    padding-right:0;
+    padding-left:0;
+    margin-right:auto;
+    margin-left:auto
+ }
+ .col-12 {
+
+ }
+
+#navbar, #logo-link, #searchbar, #buttons
+{
+    display:flex;
+}
+.top-buffer-large
+{
+    margin-top:100px;
+}
+.top-buffer-small
+{
+    margin-top:30px;
+}
+
+
+
+#navbar a
+{
+    padding:8px;
+    text-decoration: none;
+    color: black;
+    font-size:15px;
+}
+#navbar a:hover
+{
+    text-decoration: underline;
+}
+
+
+
+#logo-link
+{
+    justify-content: center;
+}
+#logo-link #logo
+{
+    width:260px;
+    height:auto;
+}
+
+
+
+#searchbar
+{
+    justify-content: center;
+}
+#searchbar #bar
+{
+    border-radius: 30px 30px 30px 30px;
+    font-size: 20px;
+    padding:0 13px 0 13px;
+    width: 600px;
+    height:40px;
+}
+#searchbar #bar:hover
+{
+    box-shadow: 1px 1px 8px 1px #dcdcdc;
+}
+
+
+
+#buttons
+{
+    justify-content: center;
+}
+.button
+{
+    background-color: #f5f5f5;
+    border:none;
+    color: black;
+    font-size:14px;
+    padding: 10px 18px;
+    margin:5px;
+    border-radius:4px;
+    outline:none;
+}
+.button:hover
+{
+    border: 2px solid #c8c8c8;
+    padding: 12px 24;
+}
+.button:focus
+{
+    border:2px solid #4885ed;
+    padding: 12px 24;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#subtitle
+{
+    padding:20px 0px 20px 60px;
+    font-size:20px; color:#D00000;
+    border-bottom: 1.5px solid whitesmoke;
+}
+
+#adv-search
+{
+    margin-left:30px;
+}
+.right
+{
+    color:rgb(87, 87, 87) ;
+}
+.right i
+{
+    color: rgb(148, 148, 148)
+}
+
+@media (max-width:768px)
+{
+    .right
+    {
+        display: none;
+    }
+}
+#submitrow
+{
+    padding:20px 0px 20px 60px;
+}
