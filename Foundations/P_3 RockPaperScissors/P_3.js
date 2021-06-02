@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     document.querySelectorAll('button').forEach(button=>{
         button.addEventListener('click', (e)=>{
             result = compare(playerSelection(e.target), computerPlay())
-            console.log(result)
             generateHtml(result)
         })
     })
@@ -78,6 +77,7 @@ function generateHtml(results)
 
 function declareWinner(winner)
 {
-    alert(`${winner} has won`)
+    document.querySelector('#footer').innerHTML = `<h2>${winner} has won </h2>`
     document.querySelector('.choices-body').innerHTML = `<button onClick = "window.location.reload()">Refresh</button>`
+    
 }
