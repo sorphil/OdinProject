@@ -4,7 +4,7 @@ Repository for all assignments and projects given in the OdinProject curriculum 
 ## Foundations
 - [x] Practicing Git Basics
 - [x] Google Homepage
-- [ ] Rock Paper Scissors
+- [x] Rock Paper Scissors
 - [ ] Etch-a-Sketch
 - [ ] Calculator
 
