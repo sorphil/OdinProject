@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,EAAE,IAAI,CACV;EACI,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;EACT,UAAU,EAAE,KAAK;CACpB",
+    "sources": [
+        "P_3.scss"
+    ],
+    "names": [],
+    "file": "P_3.css"
+}
