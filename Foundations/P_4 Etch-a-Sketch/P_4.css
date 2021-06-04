@@ -37,27 +37,33 @@ nav > div
 
 
 
-nav > div> button
+.toggle, #clearbtn
 {
     width:200px;
     background-color: black;
     color: white;
     height:35px;
     margin:5px;
+    box-sizing: border-box;
+    border: 3px black solid;
     cursor: pointer;
 }
 
+.toggle:active, #clearbtn:active {background-color: rgb(116, 114, 114); color:black}
+.activebtn {background-color: rgb(61, 61, 61); ;}
 
-.colorPicker
-{
-    margin: 6px 5px 6px 0;
-    width:40px;
-}
-.colorSlider
-{
-    margin: 6px 0 0 5px;
-    width:130px;
-}
+
+
+
+.colorControl span{display: flex; align-items: center; justify-content: center;}
+
+#colorPicker{width:40px;}
+
+#clearbtn{width:125px;}
+
+
+
+
 
 .container
 {

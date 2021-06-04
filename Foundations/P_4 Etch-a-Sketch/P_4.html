@@ -7,25 +7,27 @@
         <title>Etch-a-Sketch</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./P_3.css">
-        <script src = "./P_3.js"></script>
+        <link rel="stylesheet" href="./P_4.css">
+        <script src = "./P_4.js"></script>
     </head>
     <body>
         <header><h1>Etch-a-Sketch</h1></header>
         <!-- <nav> <button class = "inputbtn"> Change dimensions</button></nav> -->
         <nav>
             <div class = "dimensionControl">
-                <input type="range" min="2" max="64" value="4" class="dimensionSlider" id="myRange">
-                <div class = "dimensionText"></div>
+                <input type="range" min="2" max="64" value="4" id="dimensionSlider">
+                <div id = "dimensionText"></div>
             </div>
             <div class = "colorControl">
-                <button>Solid Color</button>
-                <span><input type="color" value = "#fff" class="colorPicker"><input type="range"  class="colorSlider"> </span>
+                <button id = "solidToggle" class = "toggle">Solid Color</button>
+                <span><input type="color" id="colorPicker"><button id = "clearbtn">Clear All</button></span>
             </div>
             <div class = "otherControl">
-                <button>Rainbow</button>
-                <button>Eraser</button>
+                <button id = "rainbowToggle" class = "toggle activebtn" >Rainbow</button>
+                <button id = "eraserToggle" class = "toggle">Eraser</button>
+                
             </div>
+
         </nav>
 
         <div class = "container">
