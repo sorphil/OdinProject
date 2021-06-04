@@ -1,0 +1,74 @@
+html, body
+{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+header
+{
+    width:100%;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+nav
+{
+    display: flex;
+    border: 10px black solid;
+    box-sizing: border-box;
+    width:100%;
+    justify-content: center;
+}
+
+nav > div
+{
+    display: flex;
+    padding:5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+nav > div> button
+{
+    width:200px;
+    background-color: black;
+    color: white;
+    height:35px;
+    margin:5px;
+    cursor: pointer;
+}
+
+
+.colorPicker
+{
+    margin: 6px 5px 6px 0;
+    width:40px;
+}
+.colorSlider
+{
+    margin: 6px 0 0 5px;
+    width:130px;
+}
+
+.container
+{
+    padding: 40px;
+    background-color: black;
+    display:grid;
+}
+
+.container > div
+{
+    background-color: white;
+    border-collapse: collapse;
+    border: 1px solid rgb(119, 118, 118);
+}
