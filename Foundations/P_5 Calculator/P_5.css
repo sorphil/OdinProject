@@ -1,15 +1,14 @@
 :root{
-    --calculator-body-color:rgba(210,200,190,205);
+    --body-color:rgba(210,200,190,205);
     --calculator-head-color:rgba(120,120,120,255);
-    --calculator-headFont-color:rgba(220,218,219,255);
     --calculator-keys-color:rgba(225,220,217,255);
-    --calculator-keyFont-color:rgba(27,22,19,255);
+    --calculator-font-color:rgba(30,30,30,255);
     --calculator-operator-color:rgba(161,180,72,255);
     --calculator-equal-color:rgba(1,61,247,255);
-    --calculator-darkModebtn-color:rgba(10,10,10,255);
     --calculator-keys-border: 1px solid rgba(214,209,206,255);
     --calculator-body-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600;700&display=swap');
 
@@ -23,11 +22,18 @@ body, html, .calculatorBody, .calculatorHead, .calculatorKeys{flex-direction: co
 
 body,html
 {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
     margin:0;
     padding: 0;
     min-height: 100vh;
     min-width: 100vw;
-    background-color: var(--calculator-body-color);
+    background-color: var(--body-color);
     font-weight:600;
     transition: filter 500ms;
 }
@@ -37,7 +43,7 @@ header
     height:75px;
     width:600px;
     background-color: var(--calculator-head-color);
-    color:var(--calculator-headFont-color);
+    color:var(--calculator-font-color);
     align-items: center;
     justify-content: space-around;
     margin-bottom: 30px;
@@ -49,11 +55,11 @@ header
     align-items: center;
     padding-left: 40px;
     box-sizing: border-box;
-    width:450px;
+    width:470px;
     height: 100%;
 }
 .Head h1{padding-right: 30px;}
-.Head a{color:var(--calculator-headFont-color); text-decoration: none;}
+.Head a{color:var(--calculator-font-color); text-decoration: none;}
 .Head a:hover, .Head a:focus{text-decoration: underline;}
 
 #darkMode
@@ -61,8 +67,8 @@ header
     display: flex;
     align-items: center;
     justify-content: center;
-    width:150px;
-    background-color: var(--calculator-darkModebtn-color);
+    width:130px;
+    background-color: var(--calculator-font-color);
     height: 100%;
 }
 
@@ -77,7 +83,7 @@ header
 
 .calculatorHead
 {
-    color:var(--calculator-headFont-color);
+    color:var(--calculator-font-color);
     width: 100%;
     font-family: 'Roboto Mono', monospace;
     height: 220px;;
@@ -111,13 +117,6 @@ header
     width:100%;
     height:600px;
     background-color: var(--calculator-keys-color);
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
 }
 
 .calculatorRow{height:20%;}
@@ -129,7 +128,7 @@ header
     height:100%;
     box-sizing: border-box;
     font-size: 50px;
-    color: var(--calculator-keyFont-color);
+    color: var(--calculator-font-color);
     border:var(--calculator-keys-border);
     cursor: pointer;
     transition: box-shadow 200ms;
@@ -138,10 +137,10 @@ header
 .operator{background-color: var(--calculator-operator-color)}
 #equalKey{background-color:var(--calculator-equal-color) ;}
 #clear{width:50%;}
-.keys:hover, .keys:focus, #darkMode:hover, #darkMode:focus{box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.2);}
-.keys:active,  #darkMode:active{box-shadow: inset 0 0 200px 200px rgba(255, 255, 255, 0.55);}
+.keys:hover, .keys:focus, #darkMode:hover{box-shadow: inset 0 0 75px 75px rgba(255, 255, 255, 0.2);}
+.keys:active,  #darkMode:active{box-shadow: inset 0 0 150px 150px rgba(255, 255, 255, 0.55);}
 
 .invert{filter: invert(1);}
 
 
-#darkMode{text-decoration: none; color:var(--calculator-headFont-color)}
+#darkMode{text-decoration: none; color:var(--calculator-keys-color)}
