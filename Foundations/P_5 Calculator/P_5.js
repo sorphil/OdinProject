@@ -37,12 +37,15 @@ function btnAddEvents(buttons)
             btn.addEventListener('click', ()=>{
                 const operationLength = operation.length
                 if(results!="")
-                {
+                {   if(btn.dataset.numeric=="0"&&!isNumeric(operation[operationLength-1])&&operation[operationLength-1]!=".")
+                    return
                     results = ""
                     operation.push(btn.dataset.numeric)
                 }
                 else if(operationLength!=20)
                 {   
+                    if(btn.dataset.numeric=="0"&&!isNumeric(operation[operationLength-1])&&operation[operationLength-1]!=".")
+                    return
                     operation.push(btn.dataset.numeric)
                     
                 }
@@ -58,6 +61,10 @@ function btnAddEvents(buttons)
                 const operationLength = operation.length
                 if (results!="" && results!=NaN&& results!=Infinity && results!=undefined    && results!="Math Error")
                 {
+                    if(results%1!=0)
+                    {
+                        results = Math.ceil(results*1000)/1000
+                    }
                     // get result-digits
                     operation = (""+results).split("");
                     operation.push(btn.dataset.operator)
@@ -94,12 +101,16 @@ function keyboardEvents(e)
     {
         // removes results when number is clicked
         if(results!="")
-        {
+        {   
+            if(e.key=="0"&&!isNumeric(operation[operationLength-1])&&operation[operationLength-1]!=".")
+            return
             results = ""
             operation.push(e.key)
         }
         else if(operationLength!=20)
         {  
+            if(e.key=="0"&&!isNumeric(operation[operationLength-1])&&operation[operationLength-1]!=".")
+            return
             operation.push(e.key)
         }
 
@@ -109,6 +120,11 @@ function keyboardEvents(e)
         // if results are not zero, puts results into the operation array and adds the clicked operator
         if (results!="" && results!=NaN&& results!=Infinity && results!=undefined && results!="Math Error")
         {
+            if(results%1!=0)
+            {
+                results = Math.ceil(results*1000)/1000
+            }
+                    
             // get result-digits
             operation = (""+results).split("");
             results = ""
