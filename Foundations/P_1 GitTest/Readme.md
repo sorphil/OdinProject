@@ -1,1 +1,1 @@
-This is my first OP Project!
+# Git Test (OdinProject Foundations Project 1)
