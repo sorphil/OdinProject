@@ -63,7 +63,7 @@ function btnAddEvents(buttons)
                 {
                     if(results%1!=0)
                     {
-                        results = Math.ceil(results*1000)/1000
+                        results = Math.ceil(results*10000)/10000
                     }
                     // get result-digits
                     operation = (""+results).split("");
@@ -122,7 +122,7 @@ function keyboardEvents(e)
         {
             if(results%1!=0)
             {
-                results = Math.ceil(results*1000)/1000
+                results = Math.ceil(results*10000)/10000
             }
                     
             // get result-digits
