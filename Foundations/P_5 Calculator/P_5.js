@@ -16,9 +16,16 @@ document.addEventListener('DOMContentLoaded', ()=>
     darkMode.addEventListener('click', ()=> {
         html.classList.toggle('invert')
         if (html.classList.contains('invert'))
-        darkMode.innerHTML = "Light Mode"
+        {
+            darkMode.classList.toggle('darkModeToggle')
+            darkMode.innerHTML = "☀️"
+        }
         else
-        darkMode.innerHTML = "Dark Mode"
+        {
+            darkMode.classList.toggle('darkModeToggle')
+            darkMode.innerHTML = "🌙"
+        }
+        
     })
     btnAddEvents(numeric)
     btnAddEvents(operators)

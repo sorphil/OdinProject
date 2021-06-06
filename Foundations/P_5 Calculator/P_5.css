@@ -55,7 +55,7 @@ header
     align-items: center;
     padding-left: 40px;
     box-sizing: border-box;
-    width:470px;
+    width:535px;
     height: 100%;
 }
 .Head h1{padding-right: 30px;}
@@ -64,11 +64,12 @@ header
 
 #darkMode
 {
+        font-family: 'modulusbold', Arial, sans-serif;  
     display: flex;
     align-items: center;
     justify-content: center;
-    width:130px;
-    background-color: var(--calculator-font-color);
+    width:85px;
+    background-color: rgba(60,60,60,255);;
     height: 100%;
 }
 
@@ -137,10 +138,20 @@ header
 .operator{background-color: var(--calculator-operator-color)}
 #equalKey{background-color:var(--calculator-equal-color) ;}
 #clear{width:50%;}
-.keys:hover, .keys:focus, #darkMode:hover{box-shadow: inset 0 0 75px 75px rgba(255, 255, 255, 0.2);}
-.keys:active,  #darkMode:active{box-shadow: inset 0 0 150px 150px rgba(255, 255, 255, 0.55);}
+
+#darkMode.darkModeToggle {
+    filter: invert(1);
+    background-color: rgba(200, 200, 200, 1);
+}
+
+.keys:hover, .keys:focus, #darkMode.darkModeToggle:hover{box-shadow: inset 0 0 75px 75px rgba(255, 255, 255, 0.2);}
+.keys:active, #darkMode.darkModeToggle:active{box-shadow: inset 0 0 150px 150px rgba(255, 255, 255, 0.55);}
 
 .invert{filter: invert(1);}
 
 
-#darkMode{text-decoration: none; color:var(--calculator-keys-color)}
+
+
+#darkMode:hover{box-shadow: inset 0 0 75px 75px rgba(0,0,0, 0.2);}
+#darkMode:active{box-shadow: inset 0 0 150px 150px rgba(0,0,0, 0.8);}
+
