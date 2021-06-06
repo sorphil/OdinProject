@@ -56,7 +56,7 @@ function btnAddEvents(buttons)
         {
             btn.addEventListener('click', ()=>{
                 const operationLength = operation.length
-                if (results!="" && results!=NaN&& results!=Infinity && results!="Math Error")
+                if (results!="" && results!=NaN&& results!=Infinity && results!=undefined    && results!="Math Error")
                 {
                     // get result-digits
                     operation = (""+results).split("");
@@ -64,7 +64,7 @@ function btnAddEvents(buttons)
                     results =""
 
                 }
-                else if(operationLength!=0 && operationLength!=20 && !operators.includes(operation[operationLength-1]))
+                else if(operationLength!=0 && operationLength!=20 && !operators.includes(operation[operationLength-1]) && isNumeric(operation[operationLength-1]))
                 {   
                     operation.push(btn.dataset.operator)
                 }
@@ -92,6 +92,7 @@ function keyboardEvents(e)
 
     if(isNumeric(e.key))
     {
+        // removes results when number is clicked
         if(results!="")
         {
             results = ""
@@ -105,7 +106,8 @@ function keyboardEvents(e)
     }
     else if (operators.includes(e.key))
     {
-        if (results!="" && results!=NaN&& results!=Infinity && results!="Math Error")
+        // if results are not zero, puts results into the operation array and adds the clicked operator
+        if (results!="" && results!=NaN&& results!=Infinity && results!=undefined && results!="Math Error")
         {
             // get result-digits
             operation = (""+results).split("");
@@ -128,7 +130,9 @@ function keyboardEvents(e)
             }
 
         }
-        else if(operationLength!=0 && operationLength!=20 && !operators.includes(operation[operationLength-1]))
+
+        // prevents consecutive operators/starting expression with operator/and putting operators after decimal points
+        else if(operationLength!=0 && operationLength!=20 && !operators.includes(operation[operationLength-1]) && isNumeric(operation[operationLength-1]))
         {   
             if(e.key=="/")
             {
@@ -147,11 +151,14 @@ function keyboardEvents(e)
                 operation.push(e.key)
             }
         }
+
+        //Allow negative sign only when before x or ÷ or at the start of number
         else if((operation[operationLength-1]=="x"||operation[operationLength-1]=="÷"||operationLength==0) && e.key=='-')
         {
             operation.push('-')
          
         }
+        // if negative sign is already present, remove
         else if(e.key=='-'&&operation[operationLength-1]=='-')
         {
             operation.pop()
@@ -301,7 +308,8 @@ function calculate(operandStack, operatorStack)
        
     }
     results = operandStack[0]
-    console.log()
+
+
     if (((""+results).split("")).length>19 || results == NaN|| results == Infinity)
     {
         results = "Math Error"
@@ -340,6 +348,17 @@ function decimalpoint()
     }
     else
     {
+        for(let i =operation.length-1; i>=0;i--)
+        {
+            if(operation[i]=='.')
+            {
+                return
+            }
+            else if(operators.includes(operation[i]))
+            {
+                break;
+            }
+        }
         operation.push('.')
         generateOperation()
     }
