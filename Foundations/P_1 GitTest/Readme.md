@@ -1,1 +1,2 @@
-# Git Test (OdinProject Foundations Project 1)
+# OdinProject Foundations Project 1 - Git Test
+woaw

@@ -30,8 +30,8 @@ Repository for all assignments and projects given in the OdinProject curriculum 
 - [ ] Shopping Cart
 - [ ]  Testing Practice
 - [ ] Battleship
--  [ ] Where's Waldo (A Photo Tagging App)
--  [ ] Final Project
+- [ ] Where's Waldo (A Photo Tagging App)
+- [ ] Final Project
 
 ## Node JS
 - [ ] Basic Informational Site 
