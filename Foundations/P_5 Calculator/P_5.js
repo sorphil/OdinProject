@@ -330,8 +330,14 @@ function calculate(operandStack, operatorStack)
         }
        
     }
+
+    if(operandStack[0]==undefined && operation.length==0)
+    {
+        return
+    }
     results = operandStack[0]
 
+    
 
     if (((""+results).split("")).length>19 || results == NaN|| results == Infinity)
     {
