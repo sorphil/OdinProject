@@ -6,7 +6,7 @@ Repository for all assignments and projects given in the OdinProject curriculum 
 - [x] Google Homepage
 - [x] Rock Paper Scissors
 - [x] Etch-a-Sketch
-- [ ] Calculator
+- [x] Calculator
 
 ## HTML & CSS
 - [ ] Embedding Images and Video
