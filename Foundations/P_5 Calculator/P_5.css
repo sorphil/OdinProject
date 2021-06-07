@@ -33,6 +33,8 @@ body,html
     padding: 0;
     min-height: 100vh;
     min-width: 100vw;
+    height: 100vh;
+    width: 100vw;
     background-color: var(--body-color);
     font-weight:600;
     transition: filter 500ms;
@@ -40,26 +42,28 @@ body,html
 
 header
 {
-    height:75px;
-    width:600px;
+    height:8vmin;
+    width:31vmax;
     background-color: var(--calculator-head-color);
     color:var(--calculator-font-color);
     align-items: center;
-    justify-content: space-around;
-    margin-bottom: 30px;
+    justify-content: space-between;
+    margin-bottom: 4vmin;
 }
 
 .Head
 {
     display: flex;
     align-items: center;
-    padding-left: 40px;
+    padding-left: 2vmax;
     box-sizing: border-box;
-    width:535px;
+    background-color: antiquewhite;
+    width:26.7vmax;
     height: 100%;
 }
-.Head h1{padding-right: 30px;}
-.Head a{color:var(--calculator-font-color); text-decoration: none;}
+.Head h1{padding-right: 1.5vmax;font-size: 3.2vmin;}
+.Head a{color:var(--calculator-font-color); text-decoration: none; }
+.Head div{font-size: 1.7vmin;}
 .Head a:hover, .Head a:focus{text-decoration: underline;}
 
 #darkMode
@@ -68,15 +72,16 @@ header
     display: flex;
     align-items: center;
     justify-content: center;
-    width:85px;
+    width:4.3vmax;
     background-color: rgba(60,60,60,255);;
+    font-size: 2.5vmin;
     height: 100%;
 }
 
 .calculatorBody
 {
-    height:800px;
-    width:600px;
+    height:80vmin;
+    width:31vmax;
     background-color: var(--calculator-head-color);
     font-family: 'modulusbold', Arial, sans-serif;
     box-shadow: var(--calculator-body-shadow);
@@ -87,7 +92,7 @@ header
     color:var(--calculator-font-color);
     width: 100%;
     font-family: 'Roboto Mono', monospace;
-    height: 220px;;
+    height: 23vmin;;
     background-color:var(--calculator-head-color);
 }
 
@@ -97,9 +102,9 @@ header
     overflow: hidden;
     box-sizing: border-box;
     justify-content: flex-end;
-    height:70px;
-    font-size: 40px;
-    padding-right: 50px;
+    height:7vmin;
+    font-size: 4.2vmin;
+    padding-right: 2.55vmax;
 }
 
 
@@ -108,16 +113,16 @@ header
     box-sizing: border-box;
     justify-content: flex-end;
     align-items: center;
-    height:150px;
-    padding-right: 30px;
-    font-size: 50px;
+    height:16vmin;
+    padding-right: 1.6vmax;
+    font-size: 5.2vmin;
 }
 
 .calculatorKeys
 {
     width:100%;
-    height:600px;
-    background-color: var(--calculator-keys-color);
+    height:57vmin;
+    /* background-color: var(--calculator-keys-color); */
 }
 
 .calculatorRow{height:20%;}
@@ -128,7 +133,7 @@ header
     text-decoration: none;
     height:100%;
     box-sizing: border-box;
-    font-size: 50px;
+    font-size: 5.2vmin;
     color: var(--calculator-font-color);
     border:var(--calculator-keys-border);
     cursor: pointer;
