@@ -83,7 +83,7 @@ header
     height:80vmin;
     width:31vmax;
     background-color: var(--calculator-head-color);
-    font-family: 'modulusbold', Arial, sans-serif;
+    font-family: 'modulusbold', monospace;
     box-shadow: var(--calculator-body-shadow);
 }
 
