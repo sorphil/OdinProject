@@ -5,7 +5,7 @@
     --calculator-font-color:rgba(30,30,30,255);
     --calculator-operator-color:rgba(161,180,72,255);
     --calculator-equal-color:rgba(1,61,247,255);
-    --calculator-keys-border: 0.1vmin solid rgba(214,209,206,255);
+    --calculator-keys-border: 0.09vmin solid rgba(214,209,206,255);
     --calculator-body-shadow: 0 0 0 rgba(0, 0, 0, 0.2), 0 3vmin 5vmin 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -36,6 +36,7 @@ body,html
     height: 100vh;
     width: 100vw;
     background-color: var(--body-color);
+    font-family: 'Roboto Mono', monospace;
     font-weight:600;
     transition: filter 500ms;
 }
@@ -83,7 +84,6 @@ header
     height:80vmin;
     width:31vmax;
     background-color: var(--calculator-head-color);
-    font-family: 'modulusbold', monospace;
     box-shadow: var(--calculator-body-shadow);
 }
 
@@ -91,7 +91,7 @@ header
 {
     color:var(--calculator-font-color);
     width: 100%;
-    font-family: 'Roboto Mono', monospace;
+
     height: 23vmin;;
     background-color:var(--calculator-head-color);
 }
@@ -132,6 +132,7 @@ header
     width:25%;
     text-decoration: none;
     height:100%;
+    border-collapse: collapse;
     box-sizing: border-box;
     font-size: 5.2vmin;
     color: var(--calculator-font-color);

@@ -248,7 +248,6 @@ function operate()
     {
         document.querySelector('.calculatorResult').innerHTML = "Invalid syntax"
         return
-        
     }
     let operatorStack = []
     let operandStack = []
@@ -379,14 +378,8 @@ function decimalpoint()
     {
         for(let i =operation.length-1; i>=0;i--)
         {
-            if(operation[i]=='.')
-            {
-                return
-            }
-            else if(operators.includes(operation[i]))
-            {
-                break;
-            }
+            if(operation[i]=='.') {return}
+            else if(operators.includes(operation[i])) {break;}
         }
         operation.push('.')
         generateOperation()
@@ -400,14 +393,16 @@ function posiNeg()
     console.log(operationLast)
     if(operationLast=="x"||operationLast=="÷"|| operation.length==0)
     {
+        if(results!="")
+        results = ""
         operation.push('-')
-        generateOperation()
     }
     else if(operationLast=='-')
     {
         operation.pop()
-        generateOperation()
     }
+    generateOperation()
+    generateResults()
 }
 
 
