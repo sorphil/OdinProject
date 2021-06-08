@@ -36,7 +36,6 @@ body,html
     height: 100vh;
     width: 100vw;
     background-color: var(--body-color);
-    font-family: 'Roboto Mono', monospace;
     font-weight:600;
     transition: filter 500ms;
 }
@@ -84,6 +83,7 @@ header
     height:80vmin;
     width:31vmax;
     background-color: var(--calculator-head-color);
+    font-family: 'modulusbold', monospace;
     box-shadow: var(--calculator-body-shadow);
 }
 
@@ -91,7 +91,7 @@ header
 {
     color:var(--calculator-font-color);
     width: 100%;
-
+    font-family: 'Roboto Mono', monospace;
     height: 23vmin;;
     background-color:var(--calculator-head-color);
 }
