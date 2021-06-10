@@ -77,7 +77,8 @@ function generateHtml(results)
 
 function declareWinner(winner)
 {
-    document.querySelector('footer').innerHTML = `<h2>${winner} has won </h2>`
+    document.querySelector('footer').innerHTML = `<h2>${winner} has won </h2>
+    <span>Made by <a href = "https://github.com/sorphil" style = "text-decoration:none; color:white;">@sorphil</a></span>`
     document.querySelector('.choices-body').innerHTML = `<button onClick = "window.location.reload()">Refresh</button>`
     
 }

@@ -1,7 +1,10 @@
 body, html {
     padding: 0;
     margin: 0;
-    min-height: 100vh;
+    min-height: 100vmin;
+    min-width: 100vmax;
+    height: 100vmin;
+    width: 100vmax;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,7 +12,7 @@ body, html {
   }
   header, footer
   {
-      width:100%;
+      width:34vmax;
       background-color: black;
       display: flex;
       align-items: center;
@@ -20,19 +23,22 @@ body, html {
   }
   header
   {
-      height:100px;
+      height:10vmin;
+      font-size:4vmin;
   }
   footer
   {
-      height:330px;
+      height:35vmin;
   }
   
   
   .choices-body
   {
       display: flex;
-      border: 3px solid black;
-      height:500px;
+      width:34vmax;
+      box-sizing: border-box;
+      border: 1vmin solid black;
+      height: 52vmin;
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -41,11 +47,11 @@ body, html {
   button 
   {
       color: white;
-      font-size: 16px;
+      font-size: 2vmin;
       background-color: black;
-      height:50px;
-      margin:30px;
-      width:500px;
+      height:5.5vmin;
+      margin:3.5vmin;
+      width:29.1vmax;
       cursor: pointer;
   }
   
@@ -59,15 +65,24 @@ body, html {
       background-color: rgb(100, 100, 100);
   }
   
-  #playerscore, #computerscore{
+  .choices-body h1, #playerscore, #computerscore{
       font-weight: 500;
-      padding:0px 10px 10px 10px;
+      font-size:3.5vmin;
+      padding:0px 1vmax 0 1vmax;
   }
+
+
   #playerchoice, #computerchoice{
-      font-weight: 500;
-      padding:10px;
+      font-weight: 100;
+      padding:0.5vmax;
+      font-size: 2.2vmin;
   }
+  footer h2{font-size:5.5vmin;}
+  footer h3{font-size:3.5vmin;}
+  footer h5{font-size: 2.8vmin;}
   #result
-  {
-      padding-left:15px;
-  }
+  {padding-left:1vmax;font-weight: 100; font-size: ;}
+
+  footer span{font-size:3vmin;}
+
+a:hover{text-decoration: underline;}
