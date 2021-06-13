@@ -25,7 +25,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
             else if (button.id =="solidToggle") toggle = -1
         })
     })
-    colorPicker.addEventListener('change', (e)=>hexColor=e.target.value)
+    colorPicker.addEventListener('change', (e)=>{hexColor=e.target.value; 
+        document.querySelector('#solidToggle').click();
+        // console.log(document.querySelector)
+    })
     clearbtn.addEventListener('click', ()=>gridGenerate(gridDimension))
     dimesnsionSlider.addEventListener('change', (e)=>
     {
