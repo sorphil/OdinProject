@@ -81,6 +81,7 @@ const game = (()=>{
     }
 
     let _checkWinner = (xTiles, oTiles) =>{
+
         const _checkVertical = (arr)=>{
             let total = {zeroX:0, oneX:0, twoX:0}
             for(let i=0;i<arr.length;i++)
@@ -123,15 +124,39 @@ const game = (()=>{
             }
         }
         
+        const _checkDiagonal = (arr)=>{
+            total = {diagonalRight:0, diagonalLeft:0}
+            for(let i=0;i<arr.length;i++)
+            {
+                if(arr[i].y==arr[i].x){total.diagonalLeft++}
+                if(arr[i].y+arr[i].x==2){total.diagonalRight++}
+            }
+            for (let key in total) {
+                // console.log(key)
+                if (total.hasOwnProperty(key)) {
+                    if(total[key]==3)
+                    {
+                        return true
+                    }
+                }
+            }
+        }
+
+        
+        
         if(game.currentPlayer==_players[0])
-        {if(_checkVertical(xTiles)){alert("WINNER")}
-        if(_checkHorizontal(xTiles)){alert("WINNER")}
+        {
+            // if(_checkVertical(xTiles)){alert("WINNER")}
+            // if(_checkHorizontal(xTiles)){alert("WINNER")}
+            if(_checkDiagonal(xTiles)){alert("WINNER")}
         }
-        else if(game.currentPlayer==_players[1])
-        {console.log(oTiles)
-            if(_checkVertical(oTiles)){alert("WINNER")}
-        if(_checkHorizontal(oTiles)){alert("WINNER")}
-        }
+
+
+        // else if(game.currentPlayer==_players[1])
+        // {
+        //if(_checkVertical(oTiles)){alert("WINNER")}
+        //if(_checkHorizontal(oTiles)){alert("WINNER")}
+        // }
 
     }
 
