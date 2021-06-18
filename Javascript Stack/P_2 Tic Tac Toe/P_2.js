@@ -62,35 +62,54 @@ const game = (()=>{
     }
     
     let _watchBoard = ()=>{
-        // remove empty array elements
-        let trimArray = (arr)=>arr.filter((ele)=>ele!="")
 
         let _currentBoard = gameBoard.board
-        let xTiles = []
-        let oTiles = []
+        let playerOneTiles = []
+        let playerTwoTiles = []
         _currentBoard.markers.forEach((tile, index)=>{
             if(tile!="")
             {
                 // returns integer for y-x position and pushes it as an object for X and O respectively
-                const tilePositionInteger = () => { return {y: parseInt(_currentBoard.positions[index].split("-")[0]),  x: parseInt(_currentBoard.positions[index].split("-")[1])}}
-                if(tile=="X"){xTiles[index]=tilePositionInteger()}
-                else if(tile=="O"){oTiles[index]=tilePositionInteger()}
+                const tilePositionInteger = () => 
+                    { return {y: parseInt(_currentBoard.positions[index].split("-")[0]),  x: parseInt(_currentBoard.positions[index].split("-")[1])}}
+                
+                //if tile is Player One/Two and is not present in P1/P2 Tile array, push it
+                if(tile=="X" && !playerOneTiles.includes(tilePositionInteger()))
+                    {playerOneTiles.push(tilePositionInteger())}
+
+                else if(tile=="O" && !playerTwoTiles.includes(tilePositionInteger()))
+                    {playerTwoTiles.push(tilePositionInteger())}
             }
+            else {return}
         })
-        _checkWinner( trimArray(xTiles), trimArray(oTiles))
+        if(playerOneTiles.length>=3|| playerTwoTiles.length>=3)
+        _watchWinner(playerOneTiles, playerTwoTiles, _currentBoard)
     }
 
-    let _checkWinner = (xTiles, oTiles) =>{
-
-        const _checkVertical = (arr)=>{
-            let total = {zeroX:0, oneX:0, twoX:0}
+    let _watchWinner = (playerOneTiles, playerTwoTiles, _currentBoard) =>{
+        const _checkWinner = (arr, direction)=>{
+            let total = {}
+            direction=="vertical" ? total={zeroX:0, oneX:0, twoX:0} : (direction=="horizontal" ? total={zeroY:0, oneY:0, twoY:0} : total = {diagonalRight:0, diagonalLeft:0})
             for(let i=0;i<arr.length;i++)
             {
-                if(arr[i].x==0){total.zeroX++}
-                else if(arr[i].x==1){total.oneX++} 
-                else if(arr[i].x==2){total.twoX++} 
+                if(direction=="vertical")
+                {
+                    if(arr[i].x==0){total.zeroX++}
+                    else if(arr[i].x==1){total.oneX++} 
+                    else if(arr[i].x==2){total.twoX++} 
+                }
+                else if(direction=="horizontal")
+                {
+                    if(arr[i].y==0){total.zeroY++}
+                    else if(arr[i].y==1){total.oneY++} 
+                    else if(arr[i].y==2){total.twoY++} 
+                }
+                else
+                {
+                    if(arr[i].y==arr[i].x){total.diagonalLeft++}
+                    if(arr[i].y+arr[i].x==2){total.diagonalRight++}
+                }
             }
-            // console.log(total)
             for (let key in total) {
                 
                 if (total.hasOwnProperty(key)) {
@@ -101,62 +120,18 @@ const game = (()=>{
 
                 }
             }
-            
         }
 
-        const _checkHorizontal = (arr)=>{
-            let total = {zeroY:0, oneY:0, twoY:0}
-            for(let i=0;i<arr.length;i++)
-            {
-                if(arr[i].y==0){total.zeroY++}
-                else if(arr[i].y==1){total.oneY++} 
-                else if(arr[i].y==2){total.twoY++} 
-            }
-            // console.log(total)
-            for (let key in total) {
-                // console.log(key)
-                if (total.hasOwnProperty(key)) {
-                    if(total[key]==3)
-                    {
-                        return true
-                    }
-                }
-            }
-        }
+        const winCondtionsX = (_checkWinner(playerOneTiles, "vertical")||_checkWinner(playerOneTiles, "horizontal")||_checkWinner(playerOneTiles, "diagonal"))
+        const winCondtionsO = (_checkWinner(playerTwoTiles, "vertical")||_checkWinner(playerTwoTiles, "horizontal")||_checkWinner(playerTwoTiles, "diagonal"))
         
-        const _checkDiagonal = (arr)=>{
-            total = {diagonalRight:0, diagonalLeft:0}
-            for(let i=0;i<arr.length;i++)
-            {
-                if(arr[i].y==arr[i].x){total.diagonalLeft++}
-                if(arr[i].y+arr[i].x==2){total.diagonalRight++}
-            }
-            for (let key in total) {
-                // console.log(key)
-                if (total.hasOwnProperty(key)) {
-                    if(total[key]==3)
-                    {
-                        return true
-                    }
-                }
-            }
-        }
-
-        
-        
-        if(game.currentPlayer==_players[0])
-        {
-            // if(_checkVertical(xTiles)){alert("WINNER")}
-            // if(_checkHorizontal(xTiles)){alert("WINNER")}
-            if(_checkDiagonal(xTiles)){alert("WINNER")}
-        }
+        if(game.currentPlayer==_players[0]&&winCondtionsX){alert("Player 1 is the winner")}
+        else if(game.currentPlayer==_players[1]&&winCondtionsO){alert("Player 2 is the winner")}
+        else if(_currentBoard.markers.every((tile)=>tile!="")){alert("TIE")}
+    }
 
 
-        // else if(game.currentPlayer==_players[1])
-        // {
-        //if(_checkVertical(oTiles)){alert("WINNER")}
-        //if(_checkHorizontal(oTiles)){alert("WINNER")}
-        // }
+    const minmax = ()=>{
 
     }
 
