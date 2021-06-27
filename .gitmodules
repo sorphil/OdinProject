@@ -1,0 +1,3 @@
+[submodule "Foundations/RockPaperScissors"]
+	path = Foundations/RockPaperScissors
+	url = https://github.com/sorphil/RockPaperScissors
