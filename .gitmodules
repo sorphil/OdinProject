@@ -7,3 +7,6 @@
 [submodule "Foundations/Calculator"]
 	path = Foundations/Calculator
 	url = https://github.com/sorphil/Calculator
+[submodule "Javascript Stack/Library"]
+	path = Javascript Stack/Library
+	url = https://github.com/sorphil/Library
