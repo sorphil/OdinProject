@@ -4,3 +4,6 @@
 [submodule "Foundations/EtchASketch"]
 	path = Foundations/EtchASketch
 	url = https://github.com/sorphil/EtchASketch
+[submodule "Foundations/Calculator"]
+	path = Foundations/Calculator
+	url = https://github.com/sorphil/Calculator
