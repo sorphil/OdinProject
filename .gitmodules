@@ -1,3 +1,6 @@
 [submodule "Foundations/RockPaperScissors"]
 	path = Foundations/RockPaperScissors
 	url = https://github.com/sorphil/RockPaperScissors
+[submodule "Foundations/EtchASketch"]
+	path = Foundations/EtchASketch
+	url = https://github.com/sorphil/EtchASketch
