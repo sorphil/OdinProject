@@ -10,3 +10,6 @@
 [submodule "Javascript Stack/Library"]
 	path = Javascript Stack/Library
 	url = https://github.com/sorphil/Library
+[submodule "Javascript Stack/Tic-Tac-Toe"]
+	path = Javascript Stack/Tic-Tac-Toe
+	url = https://github.com/sorphil/Tic-Tac-Toe
