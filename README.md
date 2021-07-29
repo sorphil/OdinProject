@@ -21,7 +21,7 @@ Repository for all assignments and projects given in the OdinProject curriculum 
 
 ## Javascript
 - [x] Library 
-- [ ] Tic Tac Toe
+- [x] Tic Tac Toe
 - [ ] Restaurant Page
 - [ ] To Do List
 - [ ] Weather App
