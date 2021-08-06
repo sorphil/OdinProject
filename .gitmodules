@@ -7,12 +7,12 @@
 [submodule "Foundations/Calculator"]
 	path = Foundations/Calculator
 	url = https://github.com/sorphil/Calculator
-[submodule "Javascript Stack/Javascript/Library"]
-	path = Javascript Stack/Javascript/Library
-	url = https://github.com/sorphil/Library
 [submodule "Javascript Stack/Javascript/Tic-Tac-Toe"]
 	path = Javascript Stack/Javascript/Tic-Tac-Toe
 	url = https://github.com/sorphil/Tic-Tac-Toe
 [submodule "Javascript Stack/Javascript/Restaurant-Page"]
 	path = Javascript Stack/Javascript/Restaurant-Page
 	url = https://github.com/sorphil/Restaurant-Page
+[submodule "Javascript Stack/Javascript/Library"]
+	path = Javascript Stack/Javascript/Library
+	url = https://github.com/sorphil/Library.git
