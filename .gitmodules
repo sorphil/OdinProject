@@ -13,3 +13,6 @@
 [submodule "Javascript Stack/Tic-Tac-Toe"]
 	path = Javascript Stack/Tic-Tac-Toe
 	url = https://github.com/sorphil/Tic-Tac-Toe
+[submodule "Javascript Stack/Restaurant-Page"]
+	path = Javascript Stack/Restaurant-Page
+	url = https://github.com/sorphil/Restaurant-Page
