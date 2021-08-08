@@ -1,3 +1,12 @@
 # Google Homepage 
 ## OdinProject Foundations Project 2
-CS50W Project 0, made with HTML and CSS
+
+### Preview
+![Google Homepage Gif](https://media.giphy.com/media/v1nyxqXL63MTWRyMEh/giphy.gif)  
+
+The Google homepage with functioning search (image and advanced)
+
+### Built with
+- Bootstrap
+- HTML5
+
