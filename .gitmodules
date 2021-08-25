@@ -16,3 +16,6 @@
 [submodule "Javascript Stack/Javascript/Library"]
 	path = Javascript Stack/Javascript/Library
 	url = https://github.com/sorphil/Library.git
+[submodule "Restaurant-Page"]
+	path = Restaurant-Page
+	url = https://github.com/sorphil/Restaurant-Page.git
